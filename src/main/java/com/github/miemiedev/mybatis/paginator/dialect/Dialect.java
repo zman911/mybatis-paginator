@@ -138,7 +138,7 @@ public class Dialect {
             return sql;
         }
 
-        StringBuffer buffer = new StringBuffer("select * from (").append(sql).append(") temp_order order by ");
+        StringBuffer buffer = new StringBuffer("select temp_order.* from (").append(sql).append(") temp_order order by ");
         for(Order order : orders){
             if(order != null){
                 buffer.append(order.toString())
